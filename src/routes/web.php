@@ -1,7 +1,10 @@
 <?php
     use CoinbaseCommerce\ApiClient;
+    use CoinbaseCommerce\Resources\Charge;
     // MyVendor\contactform\src\routes\web.php
     Route::get('contact', function(){
-        return dd(ApiClient::init('API_KEY'));
+        ApiClient::init("API_KEY");
+        $chargeObj = Charge::retrieve("111");
+        return dd($chargeObj);
     });
 ?>
