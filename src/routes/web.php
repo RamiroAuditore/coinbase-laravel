@@ -4,7 +4,7 @@
     // MyVendor\contactform\src\routes\web.php
     Route::get('contact', function(){
         ApiClient::init("API_KEY");
-        $chargeObj = Charge::retrieve("111");
-        return dd($chargeObj);
+        $chargeList = Charge::getList(["limit" => 5]);
+        return dd($chargeList);
     });
 ?>
