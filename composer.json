@@ -1,0 +1,16 @@
+{
+    "name": "ramiroauditore/coinbase-laravel",
+    "description": "Un wrapper para la API de Coinbase Commerce en Laravel",
+    "authors": [
+        {
+            "name": "Ramiro Garcilazo",
+            "email": "ramiroauditore@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "coinbaselaravel\\": "src/"
+        }
+    }
+}
