@@ -34,7 +34,8 @@
             ];
             
             $charge = Charge::create($chargeData);
-            return dd($charge);
+            $qr_string = $charge->$request->currency;
+            return dd($qr_string);
         }
 
 
