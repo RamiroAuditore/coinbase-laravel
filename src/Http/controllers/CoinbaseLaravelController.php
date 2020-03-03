@@ -35,15 +35,14 @@
 
             try {
                 $charge = Charge::create($chargeData);
-                // dd($charge->timeline);
-                $last_timeline_entry = end($charge->timeline);
-                dd($last_timeline_entry);
-                // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code, 'status' => $last_timeline_entry->status]));
-                return 'Éxito';
             } catch (\Exception $exception) {
                 echo sprintf("Unable to create charge. Error: %s \n", $exception->getMessage());
                 return 'Error';
             }
+
+            $last_timeline_entry = end($charge->timeline);
+            dd($last_timeline_entry);
+            // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code, 'status' => $last_timeline_entry->status]));
 
             // foreach ($charge->addresses as $key => $value) {
             //     // $value = $value * 2;
