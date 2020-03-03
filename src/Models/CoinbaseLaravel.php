@@ -1,8 +1,8 @@
 <?php
     // MyVendor\Contactform\src\Models\ContactForm.php
-    namespace MyVendor\Contactform\Models;
+    namespace coinbaselaravel\Models;
     use Illuminate\Database\Eloquent\Model;
-    class ContactForm extends Model
+    class CoinbaseLaravel extends Model
     {
         protected $guarded = [];
         protected $table = 'coinbase_transactions';

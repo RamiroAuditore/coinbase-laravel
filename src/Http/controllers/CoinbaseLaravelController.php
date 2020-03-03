@@ -16,10 +16,11 @@
 
         public function create_charge(Request $request)
         {
-            return dd($request);
-            ApiClient::init("API_KEY");
-            $chargeList = Charge::getList(["limit" => 5]);
-            return dd($chargeList);
+            CoinbaseLaravel::create($request->all());
+            return redirect('/');
+            // ApiClient::init("API_KEY");
+            // $chargeList = Charge::getList(["limit" => 5]);
+            // return dd($chargeList);
         }
 
 
