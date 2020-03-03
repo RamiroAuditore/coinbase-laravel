@@ -35,7 +35,7 @@
 
             try {
                 $charge = Charge::create($chargeData);
-                dd($charge);
+                dd($charge->timeline);
                 // $last_timeline_entry = end($charge->timeline);
                 // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code, 'status' => end($last_timeline_entry['status'])]));
                 return 'Éxito';
