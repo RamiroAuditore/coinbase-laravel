@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a56412afb9e88b8c416bbb7e3d587f1",
+    "content-hash": "be9c4bcbca59c46fd7b7f7cb298b47ff",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -287,16 +287,16 @@
         },
         {
             "name": "ramiroauditore/coinbase-commerce",
-            "version": "dev-master",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RamiroAuditore/coinbase-commerce-php.git",
-                "reference": "1702593a7a1fe728a120e10e8590c6d6c2cbbc72"
+                "reference": "d5737ac95b0d4b8fef7da844d3bcd5b991f6dd4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RamiroAuditore/coinbase-commerce-php/zipball/1702593a7a1fe728a120e10e8590c6d6c2cbbc72",
-                "reference": "1702593a7a1fe728a120e10e8590c6d6c2cbbc72",
+                "url": "https://api.github.com/repos/RamiroAuditore/coinbase-commerce-php/zipball/d5737ac95b0d4b8fef7da844d3bcd5b991f6dd4e",
+                "reference": "d5737ac95b0d4b8fef7da844d3bcd5b991f6dd4e",
                 "shasum": ""
             },
             "archive": {
@@ -350,17 +350,15 @@
                 "litecoin"
             ],
             "support": {
-                "source": "https://github.com/RamiroAuditore/coinbase-commerce-php/tree/master"
+                "source": "https://github.com/RamiroAuditore/coinbase-commerce-php/tree/1.0.2"
             },
-            "time": "2020-03-03T17:20:57+00:00"
+            "time": "2020-03-03T17:50:08+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ramiroauditore/coinbase-commerce": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
