@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c420f052f98c2afb25ba181fa962244",
+    "content-hash": "866389adeb17d5ca3463bf0e3ce3038a",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -287,7 +287,7 @@
         },
         {
             "name": "ramiroauditore/coinbase-commerce",
-            "version": "1.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RamiroAuditore/coinbase-commerce-php.git",
@@ -358,7 +358,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ramiroauditore/coinbase-commerce": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

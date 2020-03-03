@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "ramiroauditore/coinbase-commerce": "^1.0"
+        "ramiroauditore/coinbase-commerce": "dev-master"
     },
     "autoload": {
         "psr-4": {
