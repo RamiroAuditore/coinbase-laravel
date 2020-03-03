@@ -7,7 +7,7 @@
     use CoinbaseCommerce\ApiClient;
     use CoinbaseCommerce\Resources\Charge;
 
-    class ContactFormController extends Controller {
+    class CoinbaseLaravelController extends Controller {
 
         public function index()
         {
