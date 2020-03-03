@@ -1,6 +1,5 @@
 <?php
     Route::group(['namespace' => 'coinbaselaravel\Http\Controllers', 'middleware' => ['web']], function(){
-        Route::get('create_charge', 'CoinbaseLaravelController@create_charge');
-        // Route::post('contact', 'ContactFormController@sendMail')->name('contact');
+        Route::post('create_charge', 'CoinbaseLaravelController@create_charge');
     });
 ?>
