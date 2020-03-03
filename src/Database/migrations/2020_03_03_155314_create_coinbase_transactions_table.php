@@ -22,7 +22,7 @@ class CreateCoinbaseTransactionsTable extends Migration
             $table->unsignedDecimal('amount', 9, 9);
             $table->string('currency');
             $table->string('status');
-            $table->jsonb('transaction_response');
+            $table->jsonb('transaction_response')->nullable();
             $table->timestamps();
         });
     }
