@@ -36,8 +36,9 @@
             try {
                 $charge = Charge::create($chargeData);
             } catch (\Exception $exception) {
-                echo sprintf("Unable to create charge. Error: %s \n", $exception->getMessage());
-                return 'Error';
+                return response()->json([
+                    'Error' => 'There was an error'
+                ]);
             }
 
             $last_timeline_entry = count($charge->timeline) - 1;
@@ -69,9 +70,10 @@
             //     }
             // }
 
-            // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code]));
-
-            // return dd($qr_string);
+            return response()->json([
+                'pricing' => $charge->pricing,
+                'qr_strings' => $charge->addresses
+            ]);
         }
 
 
