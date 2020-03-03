@@ -16,6 +16,7 @@
 
         public function create_charge(Request $request)
         {
+            $test_response = new \stdClass();
             $test_response->status = "Pending";
             $test_response_json = json_encode($test_response);
             CoinbaseLaravel::create(array_merge($request->all(), ['response' => $test_response_json]));
