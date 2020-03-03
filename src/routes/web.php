@@ -1,10 +1,5 @@
 <?php
-    use CoinbaseCommerce\ApiClient;
-    use CoinbaseCommerce\Resources\Charge;
-    // MyVendor\contactform\src\routes\web.php
-    Route::get('contact', function(){
-        ApiClient::init("API_KEY");
-        $chargeList = Charge::getList(["limit" => 5]);
-        return dd($chargeList);
+    Route::name('coinbase')->group(function () {
+        Route::get('/coinbase/create_charge', 'CoinbaseLaravelController@create_charge')->name('create_charge');
     });
 ?>
