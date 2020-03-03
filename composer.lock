@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "866389adeb17d5ca3463bf0e3ce3038a",
+    "content-hash": "bd3802bd4cfc6c61107334afe1b2157b",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -287,7 +287,7 @@
         },
         {
             "name": "ramiroauditore/coinbase-commerce",
-            "version": "dev-master",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RamiroAuditore/coinbase-commerce-php.git",
@@ -298,13 +298,6 @@
                 "url": "https://api.github.com/repos/RamiroAuditore/coinbase-commerce-php/zipball/d5737ac95b0d4b8fef7da844d3bcd5b991f6dd4e",
                 "reference": "d5737ac95b0d4b8fef7da844d3bcd5b991f6dd4e",
                 "shasum": ""
-            },
-            "archive": {
-                "exclude": [
-                    "/tests",
-                    "/examples",
-                    "/.circleci"
-                ]
             },
             "require": {
                 "guzzlehttp/guzzle": "~5.0|~6.0",
@@ -321,22 +314,7 @@
                     "CoinbaseCommerce\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "CoinbaseCommerce\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "lint": [
-                    "./vendor/bin/phpcs"
-                ],
-                "test": [
-                    "./vendor/bin/phpunit --verbose"
-                ],
-                "coverage": [
-                    "./vendor/bin/phpunit --coverage-text"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -349,19 +327,14 @@
                 "ethereum",
                 "litecoin"
             ],
-            "support": {
-                "source": "https://github.com/RamiroAuditore/coinbase-commerce-php/tree/1.0.2"
-            },
             "time": "2020-03-03T17:50:08+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "ramiroauditore/coinbase-commerce": 20
-    },
-    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
