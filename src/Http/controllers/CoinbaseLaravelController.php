@@ -28,7 +28,7 @@
                 'description' => 'La siguiente transacción se realiza para adquisición de tokens en XOYcoin',
                 'local_price' => [
                     'amount' => $request->amount,
-                    'currency' => $request->currency
+                    'currency' => 'USD'
                 ],
                 'pricing_type' => 'fixed_price'
             ];
