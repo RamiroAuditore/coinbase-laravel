@@ -8,11 +8,17 @@
         }
     ],
     "require": {
-        "coinbase/coinbase-commerce": "^1.0"
+        "ramiroauditore/coinbase-commerce": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "coinbaselaravel\\": "src/"
         }
-    }
+    },
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:RamiroAuditore/coinbase-commerce-php.git"
+        }
+    ]
 }

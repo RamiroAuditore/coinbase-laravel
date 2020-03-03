@@ -57,7 +57,7 @@ class ComposerStaticInit2058028917d0352059a97b0416ac35b1
         ),
         'CoinbaseCommerce\\' => 
         array (
-            0 => __DIR__ . '/..' . '/coinbase/coinbase-commerce/src',
+            0 => __DIR__ . '/..' . '/ramiroauditore/coinbase-commerce/src',
         ),
     );
 

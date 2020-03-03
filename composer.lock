@@ -4,52 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c4951b19c3f20cfda5e3be9ff45a1bf",
+    "content-hash": "be9c4bcbca59c46fd7b7f7cb298b47ff",
     "packages": [
-        {
-            "name": "coinbase/coinbase-commerce",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/coinbase/coinbase-commerce-php.git",
-                "reference": "033bc7caebd88a14c6604936599a730269dc14f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/coinbase/coinbase-commerce-php/zipball/033bc7caebd88a14c6604936599a730269dc14f7",
-                "reference": "033bc7caebd88a14c6604936599a730269dc14f7",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "~5.0|~6.0",
-                "php": ">=5.4.0",
-                "psr/http-message": "^1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.7",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "CoinbaseCommerce\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Coinbase Commerce API library",
-            "homepage": "https://commerce.coinbase.com/",
-            "keywords": [
-                "bitcoin",
-                "coinbase",
-                "coinbase-commerce",
-                "ethereum",
-                "litecoin"
-            ],
-            "time": "2018-10-22T18:12:39+00:00"
-        },
         {
             "name": "guzzlehttp/guzzle",
             "version": "6.5.2",
@@ -328,6 +284,75 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "ramiroauditore/coinbase-commerce",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RamiroAuditore/coinbase-commerce-php.git",
+                "reference": "033bc7caebd88a14c6604936599a730269dc14f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RamiroAuditore/coinbase-commerce-php/zipball/033bc7caebd88a14c6604936599a730269dc14f7",
+                "reference": "033bc7caebd88a14c6604936599a730269dc14f7",
+                "shasum": ""
+            },
+            "archive": {
+                "exclude": [
+                    "/tests",
+                    "/examples",
+                    "/.circleci"
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0|~6.0",
+                "php": ">=5.4.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.7",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CoinbaseCommerce\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "CoinbaseCommerce\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "lint": [
+                    "./vendor/bin/phpcs"
+                ],
+                "test": [
+                    "./vendor/bin/phpunit --verbose"
+                ],
+                "coverage": [
+                    "./vendor/bin/phpunit --coverage-text"
+                ]
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Coinbase Commerce API library",
+            "homepage": "https://commerce.coinbase.com/",
+            "keywords": [
+                "bitcoin",
+                "coinbase",
+                "coinbase-commerce",
+                "ethereum",
+                "litecoin"
+            ],
+            "support": {
+                "source": "https://github.com/RamiroAuditore/coinbase-commerce-php/tree/v1.0.1"
+            },
+            "time": "2018-10-22T18:12:39+00:00"
         }
     ],
     "packages-dev": [],
