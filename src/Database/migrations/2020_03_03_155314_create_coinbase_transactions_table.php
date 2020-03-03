@@ -19,7 +19,7 @@ class CreateCoinbaseTransactionsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('order_code');
             $table->string('order_id');
-            $table->unsignedDecimal('amount', 9, 9);
+            $table->unsignedDecimal('amount', 10, 4);
             $table->string('currency');
             $table->string('status');
             $table->jsonb('transaction_response')->nullable();
