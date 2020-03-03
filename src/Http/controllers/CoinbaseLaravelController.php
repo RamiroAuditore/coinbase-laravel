@@ -23,8 +23,18 @@
             // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => $test_response_json]));
             // return redirect('/');tkm
             ApiClient::init(env("COINBASE_API_KEY"));
-            $chargeList = Charge::getList(["limit" => 5]);
-            return dd($chargeList);
+            $chargeData = [
+                'name' => 'Compra en XOYcoin',
+                'description' => 'La siguiente transacción se realiza para adquisición de tokens en XOYcoin',
+                'local_price' => [
+                    'amount' => $request->amount,
+                    'currency' => $request->currency
+                ],
+                'pricing_type' => 'fixed_price'
+            ];
+            
+            $charge = Charge::create($chargeData);
+            return dd($charge);
         }
 
 
