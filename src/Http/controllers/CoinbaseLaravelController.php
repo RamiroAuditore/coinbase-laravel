@@ -32,36 +32,46 @@
                 ],
                 'pricing_type' => 'fixed_price'
             ];
-            
-            $charge = Charge::create($chargeData);
 
-            foreach ($charge->addresses as $key => $value) {
-                // $value = $value * 2;
-                switch ($request->currency) {
-                    case "bitcoincash":
-                        $qr_string = $value;
-                        break;
-                    case "litecoin":
-                        $qr_string = $value;
-                        break;
-                    case "bitcoin":
-                        $qr_string = $value;
-                        break;
-                    case "ethereum":
-                        $qr_string = $value;
-                        break;
-                    case "ethereum":
-                        $qr_string = $value;
-                        break;
-                    case "ethereum":
-                        $qr_string = $value;
-                        break;
-                    default:
-                        $qr_string = "error";
-                }
+            try {
+                $charge = Charge::create($chargeData);
+                $last_timeline_entry = end($charge->timeline);
+                CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code, 'status' => end($last_timeline_entry['status'])]));
+                return 'Éxito';
+            } catch (\Exception $exception) {
+                echo sprintf("Enable to create charge. Error: %s \n", $exception->getMessage());
+                return 'Error';
             }
 
-            return dd($qr_string);
+            // foreach ($charge->addresses as $key => $value) {
+            //     // $value = $value * 2;
+            //     switch ($request->currency) {
+            //         case "bitcoincash":
+            //             $qr_string = $value;
+            //             break;
+            //         case "litecoin":
+            //             $qr_string = $value;
+            //             break;
+            //         case "bitcoin":
+            //             $qr_string = $value;
+            //             break;
+            //         case "ethereum":
+            //             $qr_string = $value;
+            //             break;
+            //         case "ethereum":
+            //             $qr_string = $value;
+            //             break;
+            //         case "ethereum":
+            //             $qr_string = $value;
+            //             break;
+            //         default:
+            //             $qr_string = "error";
+            //     }
+            // }
+
+            CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => json_encode($charge), 'order_id' => $charge->code]));
+
+            // return dd($qr_string);
         }
 
 
