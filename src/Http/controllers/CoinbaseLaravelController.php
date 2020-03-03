@@ -22,7 +22,7 @@
             // $test_response_json = json_encode($test_response);
             // CoinbaseLaravel::create(array_merge($request->all(), ['transaction_response' => $test_response_json]));
             // return redirect('/');tkm
-            ApiClient::init(env("COINBASE_API_KEY", "1d28d8e3-f327-4f47-b146-c227e261362b"));
+            ApiClient::init(env("COINBASE_API_KEY"));
             $chargeList = Charge::getList(["limit" => 5]);
             return dd($chargeList);
         }
