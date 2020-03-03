@@ -34,7 +34,34 @@
             ];
             
             $charge = Charge::create($chargeData);
-            return dd($charge);
+
+            foreach ($charge->addresses as $key => $value) {
+                // $value = $value * 2;
+                switch ($request->currency) {
+                    case "bitcoincash":
+                        $qr_string = $value;
+                        break;
+                    case "litecoin":
+                        $qr_string = $value;
+                        break;
+                    case "bitcoin":
+                        $qr_string = $value;
+                        break;
+                    case "ethereum":
+                        $qr_string = $value;
+                        break;
+                    case "ethereum":
+                        $qr_string = $value;
+                        break;
+                    case "ethereum":
+                        $qr_string = $value;
+                        break;
+                    default:
+                        $qr_string = "error";
+                }
+            }
+
+            return dd($qr_string);
         }
 
 
