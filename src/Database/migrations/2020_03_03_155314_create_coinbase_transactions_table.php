@@ -17,10 +17,10 @@ class CreateCoinbaseTransactionsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->bigInteger('order_id')->unsigned();
+            $table->string('order_id');
             $table->unsignedDecimal('amount', 9, 9);
             $table->string('currency');
-            $table->bigInteger('status')->unsigned();
+            $table->string('status');
             $table->jsonb('transaction_response');
             $table->timestamps();
         });
