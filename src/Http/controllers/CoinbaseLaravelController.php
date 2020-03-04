@@ -45,5 +45,10 @@
             ]);
         }
 
+        public function charge_update(Request $request)
+        {
+            dd($request);
+        }
+
 
     }
