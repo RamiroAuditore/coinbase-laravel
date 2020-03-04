@@ -53,7 +53,7 @@
             $context = 'NO_CONTEXT';
 
             $last_timeline_entry = count($request->event["data"]["timeline"]) - 1;
-            return dd($request->event["data"]["payments"]);
+            // return dd($request->event["data"]["payments"]);
             if(isset($request->event["data"]["timeline"][$last_timeline_entry]['context'])){
                 $context = $request->event["data"]["timeline"][$last_timeline_entry]['context'];
             }
