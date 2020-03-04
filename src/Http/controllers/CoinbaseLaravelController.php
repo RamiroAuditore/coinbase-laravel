@@ -47,7 +47,7 @@
 
         public function charge_update(Request $request)
         {
-            return $request->event->type[0];
+            return var_dump($request->event->type);
         }
 
 
