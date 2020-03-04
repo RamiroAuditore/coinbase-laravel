@@ -48,7 +48,7 @@
 
         public function charge_update(Request $request)
         {
-            return var_dump($request->event["data"]["timeline"][$last_timeline_entry]['context']);
+            return var_dump($request->event["data"]["timeline"][$last_timeline_entry]);
             $last_timeline_entry = count($request->event["data"]["timeline"]) - 1;
             if($request->event["data"]["timeline"][$last_timeline_entry]['context']){
                 $context = $request->event["data"]["timeline"][$last_timeline_entry]['context'];
