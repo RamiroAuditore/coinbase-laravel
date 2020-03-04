@@ -63,5 +63,12 @@
             return $updated_charge;
         }
 
+        public function test_sum()
+        {
+            $charge = DB::table('coinbase_transactions')->where('order_code', 'BYB293VK')->first();
+            foreach ($charge["data"]["payments"] as $key => $value) {
+                dd($value);
+            }
+        }
 
     }
