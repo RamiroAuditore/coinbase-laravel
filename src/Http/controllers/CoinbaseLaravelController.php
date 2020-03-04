@@ -38,7 +38,7 @@
             }
 
             $last_timeline_entry = count($charge->timeline) - 1;
-            CoinbaseLaravel::create(['transaction_response' => json_encode($charge), 'order_code' => $charge->code, 'order_id' => $charge->id, 'status' => $charge->timeline[$last_timeline_entry]['status'], 'user_id' => $request->user_id, 'amount' => $request->amount, 'currency' => $request->currency]);
+            CoinbaseLaravel::create(['transaction_response' => json_encode($charge), 'order_code' => $charge->code, 'order_id' => $charge->id, 'status' => $charge->timeline[$last_timeline_entry]['status'], 'user_id' => $request->user_id, 'amount' => $request->amount, 'currency' => $request->currency, 'token_amount' => $request->token_amount]);
 
             return response()->json([
                 'pricing' => $charge->pricing,
