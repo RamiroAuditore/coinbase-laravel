@@ -47,7 +47,8 @@
 
         public function charge_update(Request $request)
         {
-            return $request->event["data"]["code"];
+            $last_timeline_entry = count($request->event["data"]["timeline"]) - 1;
+            return $last_timeline_entry;
         }
 
 
