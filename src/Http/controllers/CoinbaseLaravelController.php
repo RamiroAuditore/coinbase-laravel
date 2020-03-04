@@ -58,7 +58,7 @@
 
             $updated_charge = DB::table('coinbase_transactions')
             ->where('id', $charge_to_update->id)
-            ->update(['status' => $request->event["data"]["timeline"][$last_timeline_entry]['status'], 'status_context' => $context]);
+            ->update(['status' => $request->event["data"]["timeline"][$last_timeline_entry]['status'], 'status_context' => $context, "updated_at" => \Carbon\Carbon::now()]);
 
             return $updated_charge;
         }
