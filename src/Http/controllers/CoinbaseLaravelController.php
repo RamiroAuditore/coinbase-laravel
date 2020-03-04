@@ -48,13 +48,24 @@
 
         public function charge_update(Request $request)
         {
+            $tokens_per_usd = env("TOKENS_BY_DOLLAR");
+            $total_usd = 0;
             $context = 'NO_CONTEXT';
+
             $last_timeline_entry = count($request->event["data"]["timeline"]) - 1;
             // return var_dump($request->event["data"]["timeline"][$last_timeline_entry]);
             if(isset($request->event["data"]["timeline"][$last_timeline_entry]['context'])){
                 $context = $request->event["data"]["timeline"][$last_timeline_entry]['context'];
             }
             $charge_to_update = DB::table('coinbase_transactions')->where('order_code', $request->event["data"]["code"])->first();
+
+            foreach ($request->event["data"]["payments"] as $key => $value) {
+                if($value["status"] == "CONFIRMED"){
+                    $total+=$value["value"]["local"]["amount"];
+                }
+            }
+
+            $total_tokens = $tokens_per_usd * $total_usd;
 
             $updated_charge = DB::table('coinbase_transactions')
             ->where('id', $charge_to_update->id)
@@ -65,8 +76,11 @@
 
         public function test_sum()
         {
-            $total = 0;
+            $total_usd = 0;
+            $tokens_per_usd = env("TOKENS_BY_DOLLAR");
+
             $charge = DB::table('coinbase_transactions')->where('order_code', 'BYB293VK')->first();
+
             $response_array = unserialize($charge->transaction_response);
             foreach ($response_array["data"]["payments"] as $key => $value) {
                 if($value["status"] == "CONFIRMED"){
@@ -74,7 +88,9 @@
                 }
             }
 
-            dd($total);
+            $total_tokens = $tokens_per_usd * $total_usd;
+
+            dd($total_tokens);
         }
 
     }
