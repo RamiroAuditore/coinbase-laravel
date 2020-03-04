@@ -61,7 +61,7 @@
 
             foreach ($request->event["data"]["payments"] as $key => $value) {
                 if($value["status"] == "CONFIRMED"){
-                    $total+=$value["value"]["local"]["amount"];
+                    $total_usd+=$value["value"]["local"]["amount"];
                 }
             }
 
@@ -84,7 +84,7 @@
             $response_array = unserialize($charge->transaction_response);
             foreach ($response_array["data"]["payments"] as $key => $value) {
                 if($value["status"] == "CONFIRMED"){
-                    $total+=$value["value"]["local"]["amount"];
+                    $total_usd+=$value["value"]["local"]["amount"];
                 }
             }
 
