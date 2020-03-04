@@ -65,13 +65,16 @@
 
         public function test_sum()
         {
+            $total = 0;
             $charge = DB::table('coinbase_transactions')->where('order_code', 'BYB293VK')->first();
             $response_array = unserialize($charge->transaction_response);
             foreach ($response_array["data"]["payments"] as $key => $value) {
                 if($value["status"] == "CONFIRMED"){
-                    dd($value["value"]["local"]["amount"]);
+                    $total+=$value["value"]["local"]["amount"];
                 }
             }
+
+            dd($total);
         }
 
     }
