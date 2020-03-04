@@ -21,7 +21,9 @@ class CreateCoinbaseTransactionsTable extends Migration
             $table->string('order_id');
             $table->unsignedDecimal('amount', 10, 4);
             $table->string('currency');
+            $table->unsignedDecimal('token_amount', 10, 4);
             $table->string('status');
+            $table->string('status_context')->nullable()->default('NO_CONTEXT');
             $table->jsonb('transaction_response')->nullable();
             $table->timestamps();
         });

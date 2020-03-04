@@ -49,10 +49,17 @@
         public function charge_update(Request $request)
         {
             $last_timeline_entry = count($request->event["data"]["timeline"]) - 1;
+            if($request->event["data"]["timeline"][$last_timeline_entry]['context']){
+                $context = $request->event["data"]["timeline"][$last_timeline_entry]['context'];
+            } else {
+                $context = 'NO_CONTEXT';
+            }
+
             $charge_to_update = DB::table('coinbase_transactions')->where('order_code', $request->event["data"]["code"])->first();
+
             $updated_charge = DB::table('coinbase_transactions')
             ->where('id', $charge_to_update->id)
-            ->update(['status' => $request->event["data"]["timeline"][$last_timeline_entry]['status']]);
+            ->update(['status' => $request->event["data"]["timeline"][$last_timeline_entry]['status'], 'status_context' => $context]);
 
             return $updated_charge;
         }
