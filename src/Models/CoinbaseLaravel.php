@@ -1,5 +1,4 @@
 <?php
-    // MyVendor\Contactform\src\Models\ContactForm.php
     namespace coinbaselaravel\Models;
     use Illuminate\Database\Eloquent\Model;
     class CoinbaseLaravel extends Model

@@ -1,5 +1,4 @@
 <?php
-    // MyVendor\Contactform\src\Http\Controllers\ContactFormController.php
     namespace coinbaselaravel\Http\Controllers;
     use App\Http\Controllers\Controller;
     use Illuminate\Http\Request;
@@ -10,11 +9,6 @@
     use Config;
 
     class CoinbaseLaravelController extends Controller {
-
-        public function index()
-        {
-           return view('contactform::contact');
-        }
 
         public function create_charge(Request $request)
         {
@@ -72,25 +66,6 @@
             ->update(['status' => $request->event["data"]["timeline"][$last_timeline_entry]['status'], 'status_context' => $context, "updated_at" => \Carbon\Carbon::now(), 'transaction_response' => serialize($request->event), 'token_amount' => $total_tokens, 'amount' => $total_usd]);
 
             return $updated_charge;
-        }
-
-        public function test_sum()
-        {
-            $total_usd = 0;
-            $tokens_per_usd = env("TOKENS_BY_DOLLAR");
-
-            $charge = DB::table('coinbase_transactions')->where('order_code', 'BYB293VK')->first();
-
-            $response_array = unserialize($charge->transaction_response);
-            foreach ($response_array["data"]["payments"] as $key => $value) {
-                if($value["status"] == "CONFIRMED"){
-                    $total_usd+=$value["value"]["local"]["amount"];
-                }
-            }
-
-            $total_tokens = $tokens_per_usd * $total_usd;
-
-            dd($total_tokens);
         }
 
     }
