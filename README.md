@@ -1,5 +1,5 @@
 # coinbase-laravel
-A wrapper for Coinbase Commerce's API for Laravel projects that require token purchases
+A wrapper for Coinbase Commerce's API for Laravel projects that require token purchases. It should work without issues if you follow the README to the tee, but I'm still new to cryptocurrency and Coinbase doesn't have the best docs, so please do submit an issue if you find a bug or something that could be improved and I'll take a look at it.
 
 ## Notes
 Right now the package just handles creating charges and has a webhook for the updates of charges. I might add the rest of endpoints in the future.
