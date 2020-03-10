@@ -10,4 +10,9 @@
         {
             return $this->belongsTo('App\User');
         }
+
+        public static function laratablesCustomAction($transaction)
+        {
+            return view('admin/laratables_actions', ['transaction' => $transaction])->render();
+        }
     }
