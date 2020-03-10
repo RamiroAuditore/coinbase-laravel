@@ -5,4 +5,9 @@
     {
         protected $guarded = [];
         protected $table = 'coinbase_transactions';
+
+        public function user()
+        {
+            return $this->belongsTo('App\User');
+        }
     }
