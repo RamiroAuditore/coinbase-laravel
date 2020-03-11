@@ -68,4 +68,20 @@
             return $updated_charge;
         }
 
+        public function resolve_charge($id)
+        {
+            ApiClient::init(env("COINBASE_API_KEY"));
+            try {
+                $retrievedCharge = Charge::retrieve($id);
+            } catch (\Exception $exception) {
+                return back()->with('error', 'Hubo un error, intenta de nuevo');
+            }
+
+            if($retrievedCharge){
+                return back()->with('status', 'Se resolvió el cargo');
+            } else {
+                return back()->with('error', 'Hubo un error, intenta de nuevo');
+            }
+        }
+
     }
