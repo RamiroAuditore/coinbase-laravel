@@ -7,6 +7,7 @@
     use CoinbaseCommerce\ApiClient;
     use CoinbaseCommerce\Resources\Charge;
     use Config;
+    use App\Models\Stage;
 
     class CoinbaseLaravelController extends Controller {
 
@@ -42,7 +43,8 @@
 
         public function charge_update(Request $request)
         {
-            $tokens_per_usd = env("TOKENS_BY_DOLLAR");
+            $current_stage = Stage::with('substages', 'bonuses_by_date', 'bonuses_by_tokens')->where('start_date', '<', Carbon::now())->where('end_date', '>', Carbon::now())->first();
+            // $tokens_per_usd = env("TOKENS_BY_DOLLAR");
             $total_usd = 0;
             $context = 'NO_CONTEXT';
 
@@ -59,7 +61,7 @@
                 }
             }
 
-            $total_tokens = $tokens_per_usd * $total_usd;
+            $total_tokens = $current_stage->base_price * $total_usd;
 
             $updated_charge = DB::table('coinbase_transactions')
             ->where('id', $charge_to_update->id)
